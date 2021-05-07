@@ -18,6 +18,6 @@ firebase.initializeApp({
 const chatauth = firebase.auth();
 const chatFirestore = firebase.firestore();
 export {chatauth, chatFirestore}; 
-export default firebase;
+// export default firebase;
 
 

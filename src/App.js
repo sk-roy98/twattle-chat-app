@@ -2,6 +2,7 @@ import './App.css';
 import firebase from 'firebase/app';
 import { chatauth } from './firebase/config';
 import { useAuthState } from "react-firebase-hooks/auth";
+import ChatRoom from './components/ChatRoom';
 // import {useCollectionData} from "react-firebase-hooks/firestore";
 
 function App() {
@@ -11,9 +12,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>twattle</h1>
+        <SignOut />
       </header>
       <section>
-        {user ? <SignOut/> : <SignIn/>}
+        {user ? <ChatRoom/> : <SignIn/>}
       </section>
     </div>
   );
@@ -25,7 +27,7 @@ function SignIn(){
   }
   return(
     <div>
-      <button class = "App-Signin"onClick = {googleSignIn}>Sign in with Google</button>
+      <button className = "App-Signin"onClick = {googleSignIn}>Sign in with Google</button>
     </div>
   )
 }
@@ -34,7 +36,7 @@ function SignOut(){
 
   return chatauth.currentUser && (
 
-    <button onClick= {() => chatauth.signOut()}>Sign out</button>
+    <button className = "signout-btn" onClick= {() => chatauth.signOut()}>Sign out</button>
   ) 
 }
 export default App;
