@@ -6,7 +6,9 @@ import ChatRoom from './components/ChatRoom';
 // import {useCollectionData} from "react-firebase-hooks/firestore";
 
 function App() {
-  const [user] = useAuthState(chatauth)
+  const [user, loading] = useAuthState(chatauth);
+  console.log(user);
+
   
   return (
     <div className="App">
@@ -14,9 +16,10 @@ function App() {
         <h1>twattle</h1>
         <SignOut />
       </header>
-      <section>
+    {!loading && <section>
         {user ? <ChatRoom/> : <SignIn/>}
       </section>
+    }
     </div>
   );
 }
