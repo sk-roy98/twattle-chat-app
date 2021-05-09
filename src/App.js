@@ -3,23 +3,25 @@ import firebase from 'firebase/app';
 import { chatauth } from './firebase/config';
 import { useAuthState } from "react-firebase-hooks/auth";
 import ChatRoom from './components/ChatRoom';
+import Darkmode from './components/darkmode';
 // import {useCollectionData} from "react-firebase-hooks/firestore";
 
 function App() {
   const [user, loading] = useAuthState(chatauth);
-  console.log(user);
-
   
   return (
     <div className="App">
       <header className="App-header">
         <h1>twattle</h1>
-        <SignOut />
+          <div className = "header-right">  
+            <Darkmode/>
+            <SignOut />
+          </div>
       </header>
-    {!loading && <section>
-        {user ? <ChatRoom/> : <SignIn/>}
+      {!loading && <section>
+          {user ? <ChatRoom/> : <SignIn/>}
       </section>
-    }
+      }
     </div>
   );
 }

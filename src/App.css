@@ -1,5 +1,5 @@
-body {
-    background-color: #000000;
+ body {
+    background-color: #121113;
   }
   
   .App {
@@ -9,10 +9,10 @@ body {
   }
   
   .App header {
-    background-color: #2b0138;
+    background-color: #f1d6ff;
     height: 10vh;
     min-height: 50px;
-    color: white;
+    color: #37235c;
     position: fixed;
     width: 100%;
     max-width: 728px;
@@ -30,8 +30,9 @@ body {
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
-    background-color: rgb(50, 39, 68);
+    background-color: rgb(205, 186, 236);
   }
+
   
   main {
     padding: 10px;
@@ -58,7 +59,7 @@ body {
     height: 10vh;
     position: fixed;
     bottom: 0;
-    background-color: rgba(52, 42, 58, 0.979);
+    background-color: rgba(125, 100, 139, 0.979);
     width: 100%;
     max-width: 728px;
     display: flex;
@@ -67,7 +68,7 @@ body {
   
   form button {
     width: 20%;
-    background-color: rgb(99, 65, 143);
+    background-color: rgb(89, 73, 110);
   }
   
   
@@ -75,23 +76,25 @@ body {
     line-height: 1.5;
     width: 100%;
     font-size: 1.5rem;
-    background: rgb(62, 54, 75);
+    background: #6d477e;
     color: white;
     outline: none;
+    box-shadow: #37235c;
     border: none;
     padding: 0 10px;
   }
   
   button {
-    background-color: #4b3770; /* Green */
+    background-color: #37235c; 
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 0.8rem 1.7rem;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
-    font-size: 1.25rem;
+    border-radius: 10px;
+    font-size: 1.3rem;
   }
   
   button:disabled {
@@ -138,17 +141,17 @@ body {
   
   .sent p {
     color: white;
-    background: #633b92;
+    background: #9b48d3;
     align-self: flex-end;
   }
   .received p {
-    background: #b7b7f1;
+    background: #a395c9;
     color: black;
   }
   
   img {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     margin: 2px 5px;
   }
