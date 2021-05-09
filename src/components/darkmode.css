@@ -5,15 +5,15 @@
   }
   
   .sun{
-      position: absolute;
-      right: 252px;
-      bottom: 17px;
+      position: relative;
+      right: 37px;
+      bottom: -2px;
       font-size: 28px;
   }
   .moon{
-    position: absolute;
-    right: 177px;
-    bottom: 17px;
+    position: relative;
+    right: 24px;
+    bottom: -2px;
     font-size: 28px;
 }
   .switch input {
@@ -24,8 +24,8 @@
   
   .switch {
     position: relative;
-    right: 60px;
-    top: -4px;
+    right: 30px;
+    top: -3px;
     display: inline-block;
     width: 45px;
     height: 25px;
