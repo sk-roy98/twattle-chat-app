@@ -45,7 +45,7 @@
   }
   .darkRoom{
     background-color: #1b0c38;
-    transition: 0,5s
+    transition: 0.5s
   }
 
   
@@ -85,11 +85,13 @@
     background-color: #37235c; 
     color:#e8d6ff;
     border-radius: 10px;
+    transition: 0.5s;
   }
   .darkButton {
     background-color:#cfb8fa;
     color: #37235c;
-    border-radius: 10px;
+    border-radius: 10px;    
+    transition: 0.5s;
   }
 
   form {
