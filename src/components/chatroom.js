@@ -5,7 +5,7 @@ import {chatauth} from '../firebase/config';
 import ChatMessage from './ChatMessage';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
-function ChatRoom() {
+function ChatRoom({darkmode}) {
     const messageRef = chatFirestore.collection('chat');
     const query = messageRef.orderBy('createdAt').limit(25);
     const [messages] = useCollectionData(query, {idField: 'id'});
@@ -28,14 +28,14 @@ function ChatRoom() {
         ref.current.scrollIntoView({behavior: 'smooth'});
     }
     return (
-        <div className = "ChatRoom">
+        <div className = {darkmode ? "darkRoom" : "chatRoom"}>
             <main>
                 {messages && messages.map(msg => <ChatMessage  message = {msg}/>)}
                 <div ref= {ref}></div>
             </main>
             <form onSubmit = {sendMessage}>
-                <input value={formValue} onChange={(e)=> setFormValue(e.target.value)}/>
-                <button disabled={!formValue} type ="submit">🕊</button>
+                <input className= {darkmode ? "darkInput" : "input"} value={formValue} onChange={(e)=> setFormValue(e.target.value)}/>
+                <button className = {darkmode ? "dark-btn":"send-btn"} disabled={!formValue} type ="submit">▶</button>
             
             </form>
         </div>

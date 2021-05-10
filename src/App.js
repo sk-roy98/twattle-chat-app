@@ -1,4 +1,5 @@
 import './App.css';
+import {useState} from 'react';
 import firebase from 'firebase/app';
 import { chatauth } from './firebase/config';
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -8,18 +9,19 @@ import Darkmode from './components/darkmode';
 
 function App() {
   const [user, loading] = useAuthState(chatauth);
+  const [darkmode, setDarkmode] = useState(false)
   
   return (
     <div className="App">
-      <header className="App-header">
+      <header className= {darkmode ? "darkHeader header" : "header"}>
         <h1>twattle</h1>
           <div className = "header-right">  
-            <Darkmode/>
-            <SignOut />
+            <Darkmode setDarkmode={setDarkmode} darkmode = {darkmode}/>
+            <SignOut darkmode = {darkmode} />
           </div>
       </header>
       {!loading && <section>
-          {user ? <ChatRoom/> : <SignIn/>}
+          {user ? <ChatRoom darkmode= {darkmode} /> : <SignIn/>}
       </section>
       }
     </div>
@@ -37,11 +39,11 @@ function SignIn(){
   )
 }
 
-function SignOut(){
+function SignOut({darkmode}){
 
   return chatauth.currentUser && (
 
-    <button className = "signout-btn" onClick= {() => chatauth.signOut()}>Sign out</button>
+    <button className = {darkmode ? "darkButton" : "signout-btn"} onClick= {() => chatauth.signOut()}>Sign out</button>
   ) 
 }
 export default App;
